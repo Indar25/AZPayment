@@ -1,7 +1,3 @@
-// --------------------------------------------------
-// README - Payment API (Markdown for GitHub)
-// --------------------------------------------------
-
 # 💳 Payment API
 
 The **Payment API** is a .NET 8 Web API designed to handle payment processing in a distributed microservices system. It communicates with the Order API using RabbitMQ and participates in the **Saga Pattern (Choreography-based)**.
