@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FluentValidation;
+using MassTransit;
 using MediatR;
 using Payment_Core.Domain;
 using Payment_Persistence;
@@ -10,7 +11,7 @@ public class CreatePaymentCommand : IRequest<Guid>
     public Guid OrderId { get; set; }
     public DateTime PaidAt { get; set; } = DateTime.UtcNow;
 }
-public class CreatePaymentCommandHandler(IUnitOfWork _unitOfWork, IMapper _mapper) : IRequestHandler<CreatePaymentCommand, Guid>
+public class CreatePaymentCommandHandler(IUnitOfWork _unitOfWork, IMapper _mapper, IPublishEndpoint _publishEndpoint) : IRequestHandler<CreatePaymentCommand, Guid>
 {
     public async Task<Guid> Handle(CreatePaymentCommand request, CancellationToken cancellationToken)
     {

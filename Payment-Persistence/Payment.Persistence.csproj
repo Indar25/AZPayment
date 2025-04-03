@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Payment-Core\Payment-Core.csproj" />
+    <ProjectReference Include="..\Payment-Core\Payment.Core.csproj" />
   </ItemGroup>
 
 </Project>
